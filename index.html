@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love Dounia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 3px solid #ffffff;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 3em; /* Bigger "Dounia" */
+            margin: 10px 0 0;
+            font-weight: bold;
+            color: #ff6161;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive design for mobile screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 2.5em;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+
+        /* Floating ribbons animation */
+        .ribbon {
+            position: absolute;
+            font-size: 24px;
+            animation: float 5s infinite ease-in-out;
+            opacity: 0.8;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>I Love My Girlfriend</h1>
+        <p>Dounia❤️ </p>
+    </div>
+
+    <!-- Floating ribbons -->
+    <script>
+        function createRibbon() {
+            const ribbon = document.createElement('div');
+            ribbon.classList.add('ribbon');
+            ribbon.style.left = Math.random() * 100 + 'vw';
+            ribbon.style.animationDuration = Math.random() * 3 + 2 + 's';
+            ribbon.textContent = '🎀'; // Add ribbon emoji
+            document.body.appendChild(ribbon);
+            setTimeout(() => ribbon.remove(), 5000);
+        }
+
+        setInterval(createRibbon, 300); // Creates a new ribbon every 300ms
+    </script>
+</body>
+</html>
